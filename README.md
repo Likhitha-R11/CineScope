@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+# 🎬 CineScope — Smart Movie Recommendation System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CineScope is a movie discovery and recommendation web application that helps users explore movies and discover content based on their interests, preferred languages, genres, and moods.
 
-## Available Scripts
+The project combines a React.js frontend, Flask backend, and MongoDB database to provide an interactive movie browsing experience.
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- **Movie Discovery:** Browse and explore movies using movie information sourced from TMDB.
+- **Personalized Recommendations:** Discover movies using content-based and collaborative filtering approaches.
+- **Multilingual Search:** Explore movies across supported languages, including Telugu and Malayalam.
+- **Voice and Text Search:** Search for movies using text or voice input.
+- **CineBot:** Interact with a rule-based chatbot for movie-related assistance.
+- **User Authentication:** Support for user registration, login, and JWT-based authentication.
+- **Multiple Profiles:** Organize movie preferences across user profiles.
+- **Responsive Interface:** Navigate movie information through an interactive React.js interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Category | Technologies |
+|---|---|
+| Frontend | React.js, Tailwind CSS |
+| Backend | Python, Flask |
+| Database | MongoDB |
+| Movie Data | TMDB API |
+| Authentication | JSON Web Tokens (JWT) |
+| API Communication | REST APIs |
+| Recommendation System | Content-based and collaborative filtering |
 
-### `npm test`
+## 🏗️ System Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```text
+              User
+               |
+               v
+      React.js Frontend
+               |
+          REST API
+               |
+               v
+        Flask Backend
+          /       \
+         v         v
+     MongoDB     TMDB API
+         |
+         v
+  Movie Data & User
+     Preferences
+```
 
-### `npm run build`
+The React.js frontend communicates with the Flask backend through API endpoints. The backend handles application logic, interacts with MongoDB, and integrates movie data from TMDB as required.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧠 Recommendation System
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+CineScope uses two recommendation approaches:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Content-based filtering:** Recommends movies based on similarities such as genres, languages, and other movie attributes.
+- **Collaborative filtering:** Uses available user preference or interaction data to identify movies that may appeal to users with similar interests.
 
-### `npm run eject`
+Combining these approaches supports more personalized movie discovery. Recommendation quality depends on the available movie data and user interactions.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 💻 My Contribution
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I contributed to the **frontend development** of CineScope.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+My work focused on:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Developing and improving user-facing components using React.js.
+- Building movie browsing and discovery interfaces.
+- Integrating frontend components with backend REST APIs.
+- Supporting the user experience for movie search and recommendations.
 
-## Learn More
+This project helped me gain practical experience in frontend development, API integration, and full-stack application architecture.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🚀 Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
 
-### Code Splitting
+Make sure you have the following installed:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Node.js and npm
+- Python 3.10 or another compatible Python version
+- MongoDB
+- Git
 
-### Analyzing the Bundle Size
+### 1. Clone the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+git clone https://github.com/Likhitha-R11/cinescope.git
+cd cinescope
+```
 
-### Making a Progressive Web App
+### 2. Set up the backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Navigate to the backend directory used in your project, create a virtual environment, and install the required dependencies.
 
-### Advanced Configuration
+```bash
+python -m venv venv
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Activate the environment on Windows:
 
-### Deployment
+```bash
+venv\Scripts\activate
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Install the dependencies:
 
-### `npm run build` fails to minify
+```bash
+pip install -r requirements.txt
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Configure the required environment variables, including the MongoDB connection and any TMDB API settings used by the application.
+
+Start the Flask backend using the entry point configured in your project.
+
+### 3. Set up the frontend
+
+Open a separate terminal and navigate to the frontend directory.
+
+```bash
+npm install
+npm start
+```
+
+If the project uses Vite instead of Create React App, use `npm run dev` instead. Check `package.json` for the correct command.
+
+### 4. Run the application
+
+Start MongoDB and the Flask backend, then start the React frontend. Open the local URL displayed by the frontend development server.
+
+**Note:** Update the directory names, environment variables, and startup commands above to match the actual repository structure before publishing this README.
+
+## 📚 What I Learned
+
+- Building interactive interfaces using React.js.
+- Integrating frontend components with Flask REST APIs.
+- Understanding communication between frontend, backend, and database layers.
+- Working with movie data and recommendation-system concepts.
+- Collaborating on a full-stack application as part of a team project.
+
+## 👥 Project Information
+
+- **Repository:** [CineScope on GitHub](https://github.com/Likhitha-R11/cinescope)
+- **Movie data source:** [The Movie Database (TMDB)](https://www.themoviedb.org/)
+
+## 🔮 Future Enhancements
+
+- Improve recommendation quality using richer user interaction data.
+- Add advanced filtering and sorting options.
+- Enhance accessibility and responsive design.
+- Expand movie discovery and personalization features.
+
+---
+
+*Built as a collaborative project to explore movie discovery, recommendation systems, and full-stack web development.*
